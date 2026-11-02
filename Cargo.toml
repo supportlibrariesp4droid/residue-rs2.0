@@ -9,6 +9,7 @@ description = "Exact integer arithmetic in a Residue Number System (CPU, SIMD-fr
 keywords = ["rns", "modular", "crt", "bignum", "no-std"]
 categories = ["mathematics", "no-std"]
 readme = "README.md"
+repository = "https://github.com/supportlibrariesp4droid/residue-rs2.0"
 exclude = ["docs/", "scripts/", "benches/flint/", "experiments/", ".github/", "python/"]
 
 [workspace]
