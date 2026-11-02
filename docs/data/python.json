@@ -1,0 +1,38 @@
+{
+ "dot product, 10000 values of 100 bits": {
+  "Python ints": 0.7158429998526117,
+  "gmpy2": 0.6599670000468905,
+  "python-flint fmpz_mat": 0.16596499972365564,
+  "python-flint + conv": 3.6662040001829155,
+  "residue": 0.022152999918034766,
+  "residue + conv": 1.193704000343132
+ },
+ "matrix product 64\u00d764, 60-bit entries": {
+  "Python ints": 19.536749000053533,
+  "python-flint fmpz_mat": 0.28204600039316574,
+  "python-flint + conv": 0.9071829999811598,
+  "residue": 0.1237569999830157,
+  "residue + conv": 0.9699039997030923
+ },
+ "determinant 64\u00d764, 10-bit entries (base of 32 primes)": {
+  "python-flint fmpz_mat": 1.0541110000303888,
+  "python-flint + conv": 1.2279289999241882,
+  "residue": 0.8768890002102125,
+  "residue + conv": 1.1850700002469239
+ },
+ "256 modular exponentiations, 1024-bit modulus, 256-bit exponent": {
+  "Python pow": 219.77959500009092,
+  "gmpy2 powmod": 23.47350700028983,
+  "gmpy2 powmod_base_list": 21.772814000087237,
+  "python-flint fmpz": 22.474504000001616,
+  "residue pow_batch": 44.13538200014955
+ },
+ "256 modular exponentiations, 2048-bit modulus, 256-bit exponent": {
+  "Python pow": 789.3316380000215,
+  "gmpy2 powmod": 95.18478500012861,
+  "gmpy2 powmod_base_list": 96.42919999987498,
+  "python-flint fmpz": 72.32397100005983,
+  "residue pow_batch": 107.59150000012596
+ },
+ "machine": "Intel Xeon 2.8 GHz cloud VM, 2 vCPUs, AVX-512. Python 3.13, gmpy2 2.3.2, python-flint 0.9.0, residue_rs 2.0.0. Fastest of three runs of the medians."
+}

@@ -1,0 +1,80 @@
+[package]
+name = "residue-rs"
+version = "2.0.0"
+edition = "2021"
+rust-version = "1.97"
+authors = ["Pietro Maria Piazza <supportlibrariesp4@gmail.com>"]
+license = "Apache-2.0"
+description = "Exact integer arithmetic in a Residue Number System (CPU, SIMD-friendly)."
+keywords = ["rns", "modular", "crt", "bignum", "no-std"]
+categories = ["mathematics", "no-std"]
+readme = "README.md"
+exclude = ["docs/", "scripts/", "benches/flint/", "experiments/", ".github/", "python/"]
+
+[workspace]
+members = [".", "python"]
+
+[lib]
+name = "residue"
+
+[profile.bench]
+lto = true
+codegen-units = 1
+
+[dependencies]
+pulp = { version = "0.22", default-features = false, features = ["std", "x86-v3", "x86-v4"], optional = true }
+num-bigint = { version = "0.4", default-features = false, optional = true }
+rayon = { version = "1.10", optional = true }
+
+[features]
+default = ["std"]
+alloc = []
+std = ["alloc", "dep:pulp"]
+parallel = ["std", "dep:rayon"]
+num-bigint = ["alloc", "dep:num-bigint"]
+
+[dev-dependencies]
+num-bigint = "0.4"
+num-integer = "0.1"
+num-traits = "0.2"
+proptest = { version = "1", default-features = false, features = ["std", "bit-set"] }
+rayon = "1.10"
+
+[target.'cfg(not(any(target_family = "wasm", target_os = "windows")))'.dev-dependencies]
+criterion = { version = "0.5", default-features = false, features = ["cargo_bench_support"] }
+rug = { version = "1", default-features = false, features = ["integer"] }
+
+[[bench]]
+name = "compare"
+harness = false
+required-features = ["std"]
+
+[[bench]]
+name = "internal"
+harness = false
+required-features = ["std"]
+
+[[test]]
+name = "batch"
+required-features = ["alloc"]
+
+[[test]]
+name = "matrix"
+required-features = ["alloc"]
+
+[[test]]
+name = "readme_example"
+required-features = ["alloc"]
+
+[[test]]
+name = "parallel"
+required-features = ["parallel", "num-bigint"]
+
+[[example]]
+name = "timing"
+required-features = ["std"]
+
+[[bench]]
+name = "modular"
+harness = false
+required-features = ["std"]

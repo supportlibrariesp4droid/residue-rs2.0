@@ -1,0 +1,32 @@
+{
+ "native": {
+  "vec_mul_4096_9ch": 16.1,
+  "vec_dot_4096_9ch": 12.8,
+  "vec_from_i128s_4096_9ch": 77.1,
+  "vec_to_i128s_4096_9ch": 43.7,
+  "matmul_64_5ch": 192.8,
+  "determinant_32_9ch": 135.0,
+  "modvec_product_1024bit_256": 119.0,
+  "modelem_product_1024bit": 3.4
+ },
+ "wasm": {
+  "vec_mul_4096_9ch": 49.6,
+  "vec_dot_4096_9ch": 34.4,
+  "vec_from_i128s_4096_9ch": 264.1,
+  "vec_to_i128s_4096_9ch": 196.9,
+  "matmul_64_5ch": 1871.0,
+  "determinant_32_9ch": 261.2,
+  "modvec_product_1024bit_256": 784.1,
+  "modelem_product_1024bit": 8.1
+ },
+ "simd128": {
+  "vec_mul_4096_9ch": 39.4,
+  "vec_dot_4096_9ch": 19.3,
+  "vec_from_i128s_4096_9ch": 284.3,
+  "vec_to_i128s_4096_9ch": 119.5,
+  "matmul_64_5ch": 1058.3,
+  "determinant_32_9ch": 153.8,
+  "modvec_product_1024bit_256": 543.0,
+  "modelem_product_1024bit": 6.6
+ }
+}
