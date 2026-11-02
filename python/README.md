@@ -1,6 +1,6 @@
 # residue-rs for Python
 
-Python bindings for [residue-rs](https://github.com/supportlibrariesp4droid/residue-rs),
+Python bindings for [residue-rs](https://github.com/supportlibrariesp4droid/residue-rs2.0),
 exact integer arithmetic in a Residue Number System, written in Rust.
 Vectors and matrices of big integers with exact dot products, matrix products
 and determinants, and modular exponentiation in batches.
@@ -64,7 +64,7 @@ large ones use several cores.
 
 ## When it is worth it
 
-![Running times of Python ints, gmpy2, python-flint and residue_rs](https://raw.githubusercontent.com/supportlibrariesp4droid/residue-rs/main/docs/python.png)
+![Running times of Python ints, gmpy2, python-flint and residue_rs](https://raw.githubusercontent.com/supportlibrariesp4droid/residue-rs2.0/main/docs/python.png)
 
 Measured with `bench/bench.py` on a 2-vCPU x86-64 VM with AVX-512, Python
 3.13, gmpy2 2.3.2, python-flint 0.9.0; milliseconds, fastest of three runs of
