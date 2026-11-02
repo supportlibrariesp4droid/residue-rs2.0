@@ -22,7 +22,7 @@ dynamic = ["version"]
 test = ["pytest", "hypothesis", "numpy"]
 
 [project.urls]
-Repository = "https://github.com/supportlibrariesp4droid/residue-rs"
+Repository = "https://github.com/supportlibrariesp4droid/residue-rs2.0"
 
 [tool.maturin]
 features = ["pyo3/extension-module"]
